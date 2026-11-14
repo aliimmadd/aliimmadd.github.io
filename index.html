@@ -3,368 +3,600 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="MeZqy0lU7MpfdVJfsfvxcFvpQcrqlT0D3lrEfhTyAuE" />
+<meta name="google-site-verification" content="MeZqy0lU7MpfdVJfsfvxcFvpQcrqlT0D3lrEfhTyAuE" />
 <title>Ali Immad | Official Website</title>
-<meta name="description" content="Meet Ali Immad, a digital creator from Pakistan interested in gaming, strategy, animation and technology.">
-
+<meta name="description" content="The official website of Ali Immad — gamer, strategist and aspiring digital creator from Pakistan. Explore his interests in Roblox, Clash of Clans, animation and technology.">
+<meta name="theme-color" content="#080808">
+<meta property="og:title" content="Ali Immad | Official Website">
+<meta property="og:description" content="Gamer. Creator. Strategist. Welcome to the digital world of Ali Immad.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aliimmadd.github.io/">
 <style>
+:root {
+    --background: #080808;
+    --surface: #101010;
+    --border: #242424;
+    --text: #f5f5f5;
+    --muted: #999;
+    --accent: #d5d5d5;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-html { scroll-behavior: smooth; }
-
-body {
-    background: #080808;
-    color: #f5f5f5;
-    font-family: Arial, sans-serif;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
-
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+::selection {
+    background: white;
+    color: black;
+}
+a {
+    color: inherit;
+}
+/* NAVIGATION */
 nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 27px 8%;
-    border-bottom: 1px solid #222;
+    padding: 24px 9%;
+    background: rgba(8,8,8,.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
 }
-
 .logo {
     font-size: 19px;
-    letter-spacing: 3px;
     font-weight: bold;
+    letter-spacing: 3px;
 }
-
+nav .links {
+    display: flex;
+    gap: 25px;
+}
 nav a {
-    color: #aaa;
     text-decoration: none;
-    margin-left: 20px;
-    font-size: 11px;
-    letter-spacing: 1px;
+    color: #999;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    transition: .3s;
 }
-
+nav a:hover {
+    color: white;
+}
+/* HERO */
 .hero {
-    min-height: 82vh;
+    min-height: 88vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px 12%;
+    padding: 100px 12%;
+    position: relative;
+    overflow: hidden;
 }
-
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    right: -150px;
+    top: 100px;
+    background: radial-gradient(circle, #ffffff0c, transparent 70%);
+    pointer-events: none;
+}
 .tag {
     color: #888;
-    letter-spacing: 4px;
     font-size: 11px;
-    margin-bottom: 25px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
 }
-
 h1 {
-    font-size: clamp(60px, 12vw, 120px);
-    letter-spacing: -5px;
-    line-height: .95;
+    font-size: clamp(65px, 13vw, 140px);
+    letter-spacing: -7px;
+    line-height: .88;
+    font-weight: 800;
 }
-
 .hero h1 span {
-    color: #777;
+    color: #666;
 }
-
 .subtitle {
     color: #aaa;
-    margin-top: 25px;
     font-size: 16px;
     line-height: 1.9;
+    margin-top: 30px;
 }
-
 .button {
     display: inline-block;
     width: fit-content;
     margin-top: 35px;
-    padding: 15px 25px;
+    padding: 16px 25px;
     border: 1px solid #555;
     color: white;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 2px;
     transition: .3s;
 }
-
 .button:hover {
     background: white;
     color: black;
+    border-color: white;
 }
-
+.scroll-note {
+    position: absolute;
+    bottom: 35px;
+    color: #555;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+/* GENERAL SECTIONS */
 section {
-    padding: 90px 12%;
-    border-top: 1px solid #222;
+    padding: 100px 12%;
+    border-top: 1px solid var(--border);
 }
-
-.number {
+.section-number {
     color: #777;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 4px;
 }
-
 h2 {
-    font-size: 38px;
-    margin: 20px 0 25px;
+    font-size: clamp(30px, 5vw, 43px);
+    letter-spacing: -1.5px;
+    margin: 22px 0;
 }
-
-p {
-    color: #aaa;
-    line-height: 1.9;
-    max-width: 750px;
+.description {
+    max-width: 720px;
+    color: var(--muted);
     font-size: 15px;
+    line-height: 2;
 }
-
+/* ABOUT */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 60px;
+    align-items: center;
+}
+.about-note {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 35px;
+}
+.about-note .small {
+    color: #777;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+.about-note h3 {
+    font-size: 25px;
+    margin: 20px 0;
+    line-height: 1.4;
+}
+.about-note p {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.8;
+}
+/* CARDS */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 18px;
-    margin-top: 35px;
+    margin-top: 40px;
 }
-
 .card {
-    background: #101010;
-    border: 1px solid #252525;
+    background: var(--surface);
+    border: 1px solid var(--border);
     padding: 32px;
     transition: .3s;
+    position: relative;
 }
-
 .card:hover {
-    border-color: #888;
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    border-color: #777;
+    background: #141414;
 }
-
-.card h3 {
-    margin-bottom: 17px;
-    font-size: 19px;
-}
-
-.card p {
-    font-size: 13px;
-}
-
-.quote {
-    font-size: 24px;
-    color: #ddd;
-    line-height: 1.6;
-    max-width: 650px;
-    margin-top: 25px;
-}
-
-footer {
-    padding: 35px 12%;
-    border-top: 1px solid #222;
+.card-number {
     color: #666;
-    font-size: 11px;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+.card h3 {
+    font-size: 21px;
+    margin: 25px 0 15px;
+}
+.card p {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.9;
+}
+.card-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid #777;
+    padding-bottom: 7px;
+    transition: .3s;
+}
+.card-link:hover {
+    color: #aaa;
+    border-color: white;
+}
+/* ACHIEVEMENTS */
+.achievement-list {
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+}
+.achievement {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 15px;
+    align-items: center;
+    padding: 25px 5px;
+    border-bottom: 1px solid var(--border);
+    gap: 20px;
 }
-
-@media(max-width:600px) {
-    nav { padding: 22px 5%; }
-    nav a { margin-left: 9px; font-size: 9px; }
-    .hero, section {
-        padding-left: 7%;
-        padding-right: 7%;
+.achievement h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+.achievement p {
+    color: #888;
+    font-size: 12px;
+    line-height: 1.7;
+}
+.achievement span {
+    color: #777;
+    font-size: 10px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+/* QUOTE */
+.quote {
+    max-width: 750px;
+    color: #ddd;
+    font-size: clamp(22px, 4vw, 31px);
+    line-height: 1.7;
+    margin-top: 30px;
+    letter-spacing: -.5px;
+}
+/* CONNECT */
+.connect-box {
+    margin-top: 35px;
+    padding: 40px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+.connect-box p {
+    color: #999;
+    line-height: 1.9;
+    font-size: 14px;
+}
+/* FOOTER */
+footer {
+    padding: 35px 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--border);
+    color: #666;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+footer a {
+    color: #888;
+    text-decoration: none;
+}
+footer a:hover {
+    color: white;
+}
+/* REVEAL ANIMATIONS */
+.reveal {
+    animation: appear 1s ease both;
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    h1 { letter-spacing: -3px; }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* MOBILE */
+@media(max-width:700px) {
+    nav {
+        padding: 20px 6%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    nav .links {
+        gap: 13px;
+        flex-wrap: wrap;
+    }
+    nav a {
+        font-size: 9px;
+    }
+    .hero {
+        padding: 90px 7%;
+        min-height: 80vh;
+    }
+    h1 {
+        letter-spacing: -4px;
+    }
+    section {
+        padding: 75px 7%;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .achievement {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .connect-box {
+        padding: 25px;
+    }
+    footer {
+        padding: 30px 7%;
+    }
+}
+@media(prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
 }
 </style>
 </head>
-
 <body>
-
+<!-- NAVIGATION -->
 <nav>
     <div class="logo">ALI IMMAD.</div>
-    <div>
-        <a href="#about">ABOUT</a>
-        <a href="#gaming">GAMING</a>
-        <a href="#projects">PROJECTS</a>
-    </div>
-</nav>
-
-<div class="hero">
-    <div class="tag">GAMER · CREATOR · STRATEGIST</div>
-
-    <h1>ALI<br><span>IMMAD.</span></h1>
-
-    <p class="subtitle">
-        Building ideas. Mastering strategies.
-        Exploring creativity.<br>
-        Creating my own place in the digital world.
-    </p>
-
-    <a href="#about" class="button">EXPLORE MY WORLD ↗</a>
+<div class="links">
+    <a href="#about">ABOUT</a>
+    <a href="#gaming">GAMING</a>
+    <a href="#achievements">ACHIEVEMENTS</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#connect">CONNECT</a>
 </div>
-
+</nav>
+<!-- HERO -->
+<header class="hero reveal">
+<div class="tag">GAMER · CREATOR · STRATEGIST</div>
+<h1>ALI<br><span>IMMAD.</span></h1>
+<p class="subtitle">
+    Building ideas. Mastering strategies.<br>
+    Exploring creativity. Creating possibilities.
+</p>
+<a href="#about" class="button">
+    EXPLORE MY WORLD ↗
+</a>
+<div class="scroll-note">
+    SCROLL TO EXPLORE ↓
+</div>
+</header>
+<!-- ABOUT -->
 <section id="about">
-    <div class="number">01 / ABOUT ME</div>
-
-    <h2>Behind the name.</h2>
-
-    <p>
-        Ali Immad is a young individual from Pakistan
-        with a passion for gaming, technology,
-        strategy and digital creativity.
-
-        His journey through the online world has
-        been shaped by his involvement in gaming
-        communities, particularly Roblox and
-        Clash of Clans.
-
-        Beyond gaming, Ali explores animation,
-        content creation and digital projects.
-        He enjoys experimenting with ideas,
-        learning new skills and discovering
-        new opportunities in technology.
-
-        Always curious and constantly evolving,
-        he sees the internet as a place to create,
-        compete and build something meaningful.
-    </p>
+<div class="section-number">01 / ABOUT ME</div>
+<div class="about-grid">
+    <div>
+        <h2>Behind the name.</h2>
+        <p class="description">
+            Ali Immad is a young individual from Pakistan
+            interested in gaming, technology, strategy
+            and digital creativity.
+            His online interests include Roblox and
+            Clash of Clans, where gaming, competition
+            and strategic thinking come together.
+            Outside gaming, he explores animation,
+            content creation and digital projects.
+            Always curious and constantly evolving,
+            he sees the internet as a place to learn,
+            create and build something meaningful.
+        </p>
+    </div>
+    <div class="about-note">
+        <div class="small">THE MINDSET</div>
+        <h3>
+            Think differently.<br>
+            Play strategically.<br>
+            Create endlessly.
+        </h3>
+        <p>
+            A personal journey through gaming,
+            creativity, technology and new ideas.
+        </p>
+    </div>
+</div>
 </section>
-
+<!-- GAMING -->
 <section id="gaming">
-    <div class="number">02 / GAMING IDENTITY</div>
-
-    <h2>More than just gaming.</h2>
-
-    <p>
-        Gaming is one of the biggest parts of
-        Ali's digital identity. From competitive
-        environments to strategic gameplay,
-        he enjoys understanding the mechanics
-        behind the games he plays.
-    </p>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Roblox</h3>
-            <p>
-                An established part of his online
-                identity. Interested in the Roblox
-                community, gaming experiences
-                and digital interaction.
-            </p>
-        </div>
-
-        <div class="card">
+<div class="section-number">02 / GAMING IDENTITY</div>
+<h2>More than just gaming.</h2>
+<p class="description">
+    Gaming is a major part of Ali's digital identity.
+    From competitive environments to strategic gameplay,
+    he enjoys understanding the mechanics behind
+    the games he plays.
+</p>
+<div class="cards">
+    <div class="card">
+        <div class="card-number">01 / ONLINE WORLD</div>
+        <h3>Roblox</h3>
+        <p>
+            An important part of his online identity.
+            Interested in the Roblox community,
+            gaming experiences and digital interaction.
+        </p>
+        <a
+            class="card-link"
+            href="https://www.roblox.com/share?code=6420a35ef10b05439ec133d802a9e27f&type=Profile&source=ProfileShare&stamp=1794648250369"
+            target="_blank"
+            rel="noopener noreferrer">
+            VISIT MY ROBLOX PROFILE ↗
+        </a>
+    </div>
+    <div class="card">
+        <div class="card-number">02 / STRATEGY</div>
+        <h3>Clash of Clans</h3>
+        <p>
+            A self-described Clash of Clans expert
+            passionate about tactical planning,
+            base analysis, strategic attacks
+            and competitive gameplay.
+        </p>
+    </div>
+    <div class="card">
+        <div class="card-number">03 / MINDSET</div>
+        <h3>Strategic Thinking</h3>
+        <p>
+            Analysing situations, predicting moves
+            and finding creative approaches to
+            overcome challenges.
+        </p>
+    </div>
+</div>
+</section>
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+<div class="section-number">03 / GAMING PROFILE</div>
+<h2>The competitive side.</h2>
+<p class="description">
+    Gaming is not just about playing.
+    It's about learning mechanics, improving
+    decision-making and developing strategies.
+</p>
+<div class="achievement-list">
+    <div class="achievement">
+        <div>
             <h3>Clash of Clans</h3>
-            <p>
-                A self-described Clash of Clans
-                expert with a strong interest in
-                strategy, tactical planning,
-                base analysis and competitive
-                gameplay.
-            </p>
+            <p>Strategy, base analysis and tactical gameplay.</p>
         </div>
-
-        <div class="card">
-            <h3>Strategic Thinking</h3>
-            <p>
-                A strategy-minded gamer who
-                enjoys analysing situations,
-                planning moves and finding
-                creative ways to overcome
-                challenges.
-            </p>
-        </div>
-
+        <span>STRATEGY</span>
     </div>
+    <div class="achievement">
+        <div>
+            <h3>Roblox</h3>
+            <p>Online gaming, experiences and community participation.</p>
+        </div>
+        <span>GAMING</span>
+    </div>
+    <div class="achievement">
+        <div>
+            <h3>Creative Problem Solving</h3>
+            <p>Exploring different approaches and learning through challenges.</p>
+        </div>
+        <span>MINDSET</span>
+    </div>
+</div>
 </section>
-
+<!-- PROJECTS -->
 <section id="projects">
-    <div class="number">03 / CREATIVE WORLD</div>
-
-    <h2>Ideas into reality.</h2>
-
-    <p>
-        Outside gaming, Ali is interested in
-        exploring different forms of digital
-        creativity and storytelling.
-    </p>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Animation</h3>
-            <p>
-                Exploring animated storytelling,
-                original characters and short-form
-                animated content.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Content Creation</h3>
-            <p>
-                Experimenting with digital media,
-                creative videos and online
-                entertainment.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Technology</h3>
-            <p>
-                Exploring technology, coding,
-                digital platforms and the
-                possibilities of the internet.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Future Ventures</h3>
-            <p>
-                Developing new ideas, exploring
-                opportunities and building
-                projects for the future.
-            </p>
-        </div>
-
+<div class="section-number">04 / CREATIVE WORLD</div>
+<h2>Ideas into reality.</h2>
+<p class="description">
+    Beyond gaming, Ali is interested in exploring
+    different forms of digital creativity,
+    storytelling and technology.
+</p>
+<div class="cards">
+    <div class="card">
+        <div class="card-number">01</div>
+        <h3>Animation</h3>
+        <p>
+            Exploring animated storytelling,
+            original characters and short-form
+            animated content.
+        </p>
     </div>
+    <div class="card">
+        <div class="card-number">02</div>
+        <h3>Content Creation</h3>
+        <p>
+            Experimenting with digital media,
+            creative videos and online entertainment.
+        </p>
+    </div>
+    <div class="card">
+        <div class="card-number">03</div>
+        <h3>Technology</h3>
+        <p>
+            Exploring coding, technology,
+            digital platforms and the possibilities
+            of the internet.
+        </p>
+    </div>
+    <div class="card">
+        <div class="card-number">04</div>
+        <h3>Future Ventures</h3>
+        <p>
+            Developing ideas, discovering opportunities
+            and building projects for the future.
+        </p>
+    </div>
+</div>
 </section>
-
+<!-- VISION -->
 <section id="vision">
-    <div class="number">04 / THE VISION</div>
-
-    <h2>Still just getting started.</h2>
-
-    <p class="quote">
-        "The internet is bigger than a screen.
-        It's a world of possibilities waiting
-        to be explored."
-    </p>
-
-    <p style="margin-top:25px;">
-        This website represents the beginning
-        of a journey. More projects, ideas
-        and experiences will find their place
-        here as the journey continues.
-    </p>
+<div class="section-number">05 / THE VISION</div>
+<h2>Still just getting started.</h2>
+<p class="quote">
+    "The internet is bigger than a screen.
+    It's a world of possibilities waiting
+    to be explored."
+</p>
+<p class="description" style="margin-top:25px;">
+    This website represents the beginning of a journey.
+    More projects, ideas and experiences will find
+    their place here as the journey continues.
+</p>
 </section>
-
+<!-- CONNECT -->
 <section id="connect">
-    <div class="number">05 / CONNECT</div>
-
-    <h2>Find me online.</h2>
-
+<div class="section-number">06 / CONNECT</div>
+<h2>Find me online.</h2>
+<div class="connect-box">
     <p>
-        The digital journey continues.
-        Stay tuned for future projects,
-        creations and updates.
+        Interested in my gaming interests
+        and creative journey?
+        Explore my Roblox profile below.
     </p>
+    <a
+        class="button"
+        href="https://www.roblox.com/share?code=6420a35ef10b05439ec133d802a9e27f&type=Profile&source=ProfileShare&stamp=1794648250369"
+        target="_blank"
+        rel="noopener noreferrer">
+        ROBLOX PROFILE ↗
+    </a>
+</div>
 </section>
-
+<!-- FOOTER -->
 <footer>
-    <span>© 2026 ALI IMMAD</span>
-    <span>INDEPENDENTLY BUILT.</span>
+<span>© 2026 ALI IMMAD</span>
+<span>BUILT WITH PURPOSE.</span>
+<a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+    BACK TO TOP ↑
+</a>
 </footer>
-
 </body>
 </html>
